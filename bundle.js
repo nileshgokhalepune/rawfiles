@@ -1,4 +1,4 @@
-( function(React, _reactNative){
+( function(React, _reactNative, createAppContainer){
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
