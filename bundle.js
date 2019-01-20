@@ -1,4 +1,10 @@
-( function(React, _reactNative, createAppContainer){
+(function(React, _reactNative, createStackNavigator, createAppContainer){
+
+
+  const navigator = createStackNavigator({
+    Home : {screen: Home },
+    Other : {screen: Other}
+  })
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
