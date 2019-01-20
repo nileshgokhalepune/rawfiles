@@ -93,4 +93,7 @@ var Drawer = function (_React$Component2) {
   return Drawer;
 }(React.Component);
 
+  return {
+    App: App
+  }
 })
