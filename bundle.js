@@ -46,7 +46,7 @@
     return Other;
   }(React.Component);
 
-  var Navigator = (0, createStackNavigator)({
+  var Navigator = createStackNavigator({
     Home: { screen: Home },
     Other: { screen: Other }
   });
