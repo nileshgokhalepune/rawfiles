@@ -1,5 +1,5 @@
 
-(function(React, _reactNative, _reactNavigation, createStackNavigator){
+(function(React, _reactNative, _reactNavigation){
   var Home = exports.Home = function (_React$Component) {
     _inherits(Home, _React$Component);
 
@@ -46,10 +46,12 @@
     return Other;
   }(React.Component);
 
-  var Navigator = createStackNavigator({
+  var Navigator = (0, _reactNavigation.createStackNavigator)({
     Home: { screen: Home },
-    Other: { screen: Other }
+    About: { screen: Other }
   });
+
+
 
   var App = function (_React$Component3) {
     _inherits(App, _React$Component3);
