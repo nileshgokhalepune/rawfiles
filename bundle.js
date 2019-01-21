@@ -68,7 +68,6 @@
       _this3.state = {
         showDrawer: false
       };
-      _this3.Navigation = (0, _reactNavigation.createAppContainer)(Navigator);
       return _this3;
     }
 
@@ -148,6 +147,7 @@
 
 
   return {
-    App: App
+    App: App,
+    Navigator: Navigator
   }
 })
