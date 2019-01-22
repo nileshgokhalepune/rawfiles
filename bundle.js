@@ -51,8 +51,6 @@
     About: { screen: Other }
   });
 
-
-
   var App = function (_React$Component3) {
   _inherits(App, _React$Component3);
 
@@ -64,7 +62,6 @@
     _this3.state = {
       showDrawer: false
     };
-    _this3.Navigation = (0, _reactNavigation.createAppContainer)(navigator);
     return _this3;
   }
 
