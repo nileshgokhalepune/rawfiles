@@ -86,6 +86,7 @@
             React.createElement(
               _reactNative.TouchableHighlight,
               { style: { marginTop: 10, borderRadius: 20, borderColor: 'red' }, onPress: function onPress() {
+                debugger;
                   return _this4.toggleDrawer();
                 } },
               React.createElement(_reactNative.Image, { style: { width: 50, height: 50, marginTop: 20 }, source: { uri: 'https://icons-for-free.com/free-icons/png/64/105234.png' } })
