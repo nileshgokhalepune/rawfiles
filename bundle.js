@@ -114,18 +114,23 @@ var AccountSummary = (exports.AccountSummary = (function(_React$Component) {
       value: function render() {
         var accounts = this.state.AccountModel.map(function(account) {
           return React.createElement(
-            View,
+            _reactNative.View,
             null,
-            React.createElement(Text, null, "Account Id: ", account.AccountId),
             React.createElement(
-              Text,
+              _reactNative.Text,
+              null,
+              "Account Id: ",
+              account.AccountId
+            ),
+            React.createElement(
+              _reactNative.Text,
               null,
               "Account Name: ",
               account.AccountName
             )
           );
         });
-        return React.createElement(View, null, accounts);
+        return React.createElement(_reactNative.View, null, accounts);
       }
     }
   ]);
