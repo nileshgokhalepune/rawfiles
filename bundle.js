@@ -54,57 +54,41 @@
 
 
   var App = function (_React$Component3) {
-    _inherits(App, _React$Component3);
+  _inherits(App, _React$Component3);
 
-    function App(props) {
-      _classCallCheck(this, App);
+  function App(props) {
+    _classCallCheck(this, App);
 
-      var _this3 = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+    var _this3 = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-      _this3.toggleDrawer = function () {
-        _this3.setState({ showDrawer: !_this3.state.showDrawer });
-      };
+    _this3.state = {
+      showDrawer: false
+    };
+    _this3.Navigation = (0, _reactNavigation.createAppContainer)(navigator);
+    return _this3;
+  }
 
-      _this3.state = {
-        showDrawer: false
-      };
-      return _this3;
-    }
-
-    _createClass(App, [{
-      key: 'render',
-      value: function render() {
-        var _this4 = this;
-
-        var showDrawer = this.state.showDrawer ? React.createElement(Drawer, this.props) : null;
-        return React.createElement(
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        _reactNative.View,
+        null,
+        React.createElement(
           _reactNative.View,
           null,
           React.createElement(
-            _reactNative.View,
+            _reactNative.Text,
             null,
-            React.createElement(
-              _reactNative.TouchableHighlight,
-              { style: { marginTop: 10, borderRadius: 20, borderColor: 'red' }, onPress: function onPress() {
-                debugger;
-                  return _this4.toggleDrawer();
-                } },
-              React.createElement(_reactNative.Image, { style: { width: 50, height: 50, marginTop: 20 }, source: { uri: 'https://icons-for-free.com/free-icons/png/64/105234.png' } })
-            )
-          ),
-          React.createElement(
-            _reactNative.View,
-            null,
-            showDrawer
+            'Main page'
           )
-        );
-      }
-    }]);
+        )
+      );
+    }
+  }]);
 
-    return App;
-  }(React.Component);
-
-  exports.default = App;
+  return App;
+}(React.Component);
 
   var Drawer = function (_React$Component4) {
     _inherits(Drawer, _React$Component4);
