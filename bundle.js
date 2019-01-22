@@ -133,9 +133,14 @@ var AccountSummary = (exports.AccountSummary = (function(_React$Component) {
   return AccountSummary;
 })(React.Component));
 
-var Navigator = createStackNavigator({
-  AccountSummary: { screen: AccountSummary }
-});
+var Navigator = createSwitchNavigator(
+  {
+    AccountSummary: { screen: AccountSummary }
+  },
+  {
+    initialRouteName: AccountSummary
+  }
+);
 
 var NavigatorApp = createAppContainer(Navigator);
 
