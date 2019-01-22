@@ -1,4 +1,4 @@
-(function(React, _reactNative, _reactNavigation, styles, createAppContainer, createStackNavigator){
+(function(React, _reactNative, _reactNavigation, styles, createAppContainer, createSwitchNavigator){
   var App = function (_React$Component3) {
   _inherits(App, _React$Component3);
 
