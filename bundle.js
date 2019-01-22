@@ -58,7 +58,7 @@
       value: function render() {
         return React.createElement(
           _reactNative.View,
-          { style: { marginTop: 200 } },
+          { style: { position:'absolute', top:0, bottom:0, left:'50%', right:0 } },
           React.createElement(_reactNative.ListView, {
             dataSource: this.state.dataSource,
             renderRow: function renderRow(rowData) {
