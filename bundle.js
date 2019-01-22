@@ -1,5 +1,5 @@
 
-(function(React, _reactNative, _reactNavigation){
+(function(React, _reactNative, _reactNavigation, styles){
   var App = function (_React$Component3) {
   _inherits(App, _React$Component3);
 
@@ -58,7 +58,7 @@
       value: function render() {
         return React.createElement(
           _reactNative.View,
-          { style: { position:'absolute', top:10, bottom:10, left:100, right:0 } },
+          { style: styles.drawer },
           React.createElement(_reactNative.ListView, {
             dataSource: this.state.dataSource,
             renderRow: function renderRow(rowData) {
