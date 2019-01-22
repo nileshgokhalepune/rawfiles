@@ -138,7 +138,7 @@ var Navigator = createSwitchNavigator(
     AccountSummary: { screen: AccountSummary }
   },
   {
-    initialRouteName: AccountSummary
+    initialRouteName: 'AccountSummary'
   }
 );
 
