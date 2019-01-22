@@ -76,9 +76,74 @@
     return Drawer;
   }(React.Component);
 
+var AccountSummary = (exports.AccountSummary = (function(_React$Component) {
+  _inherits(AccountSummary, _React$Component);
+
+  function AccountSummary(props) {
+    _classCallCheck(this, AccountSummary);
+
+    var _this = _possibleConstructorReturn(
+      this,
+      (AccountSummary.__proto__ || Object.getPrototypeOf(AccountSummary)).call(
+        this,
+        props
+      )
+    );
+
+    _this.state = {
+      AccountModel: [
+        {
+          AccountId: 1,
+          AccountName: "Super Savings"
+        },
+        {
+          AccountId: 2,
+          AccountName: "Checking"
+        },
+        {
+          AccountId: 3,
+          AccountName: "Deposits"
+        }
+      ]
+    };
+    return _this;
+  }
+
+  _createClass(AccountSummary, [
+    {
+      key: "render",
+      value: function render() {
+        var accounts = this.state.AccountModel.map(function(account) {
+          return React.createElement(
+            View,
+            null,
+            React.createElement(Text, null, "Account Id: ", account.AccountId),
+            React.createElement(
+              Text,
+              null,
+              "Account Name: ",
+              account.AccountName
+            )
+          );
+        });
+        return React.createElement(View, null, accounts);
+      }
+    }
+  ]);
+
+  return AccountSummary;
+})(React.Component));
+
+var Navigator = createStackNavigator({
+  AccountSummary: { screen: AccountSummary }
+});
+
+var NavigatorApp = createAppContainer(Navigator);
 
   return {
     App: App,
-    Drawer: Drawer
+	AccountSummary: AccountSummary,
+    Drawer: Drawer,
+	Navigator: NavigatorApp
   }
 })
