@@ -149,6 +149,7 @@
 
   return {
     App: App,
-    Navigator: Navigator
+    Navigator: Navigator,
+    Drawer: Drawer
   }
 })
