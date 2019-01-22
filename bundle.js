@@ -1,56 +1,5 @@
 
 (function(React, _reactNative, _reactNavigation){
-  var Home = exports.Home = function (_React$Component) {
-    _inherits(Home, _React$Component);
-
-    function Home() {
-      _classCallCheck(this, Home);
-
-      return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
-    }
-
-    _createClass(Home, [{
-      key: 'render',
-      value: function render() {
-        return React.createElement(
-          _reactNative.Text,
-          null,
-          'HOme SCreen'
-        );
-      }
-    }]);
-
-    return Home;
-  }(React.Component);
-
-  var Other = exports.Other = function (_React$Component2) {
-    _inherits(Other, _React$Component2);
-
-    function Other() {
-      _classCallCheck(this, Other);
-
-      return _possibleConstructorReturn(this, (Other.__proto__ || Object.getPrototypeOf(Other)).apply(this, arguments));
-    }
-
-    _createClass(Other, [{
-      key: 'render',
-      value: function render() {
-        return React.createElement(
-          _reactNative.Text,
-          null,
-          'OTher component'
-        );
-      }
-    }]);
-
-    return Other;
-  }(React.Component);
-
-  var Navigator = (0, _reactNavigation.createStackNavigator)({
-    Home: { screen: Home },
-    About: { screen: Other }
-  });
-
   var App = function (_React$Component3) {
   _inherits(App, _React$Component3);
 
@@ -130,7 +79,6 @@
 
   return {
     App: App,
-    Navigator: Navigator,
     Drawer: Drawer
   }
 })
