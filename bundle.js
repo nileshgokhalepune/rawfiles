@@ -128,7 +128,7 @@
       value: function render() {
         return React.createElement(
           _reactNative.View,
-          null,
+          { style: { marginTop: 200 } },
           React.createElement(_reactNative.ListView, {
             dataSource: this.state.dataSource,
             renderRow: function renderRow(rowData) {
