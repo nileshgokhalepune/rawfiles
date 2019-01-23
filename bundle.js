@@ -13,7 +13,7 @@
     key: 'render',
     value: function render() {
       return React.createElement(
-        Text,
+        _reactNative.Text,
         null,
         'Simple View'
       );
@@ -51,16 +51,16 @@ var AccountSummary = exports.AccountSummary = function (_React$Component2) {
     value: function render() {
       var accounts = this.state.AccountModel.map(function (account) {
         return React.createElement(
-          View,
+          _reactNative.View,
           null,
           React.createElement(
-            Text,
+            _reactNative.Text,
             null,
             'AccountId : ',
             account.AccountId
           ),
           React.createElement(
-            Text,
+            _reactNative.Text,
             null,
             'AccountName: ',
             account.AccountName
@@ -68,7 +68,7 @@ var AccountSummary = exports.AccountSummary = function (_React$Component2) {
         );
       });
       return React.createElement(
-        View,
+        _reactNative.View,
         null,
         accounts
       );
@@ -133,10 +133,10 @@ var App = exports.App = function (_React$Component4) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        View,
+        _reactNative.View,
         null,
         React.createElement(
-          Text,
+          _reactNative.Text,
           null,
           'Main Page'
         )
