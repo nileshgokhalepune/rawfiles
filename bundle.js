@@ -1,132 +1,116 @@
 (function(React, _reactNative, _reactNavigation, styles, createAppContainer, createSwitchNavigator){
-  var App = function (_React$Component3) {
-  _inherits(App, _React$Component3);
 
-  function App(props) {
-    _classCallCheck(this, App);
+  var Drawer = exports.Drawer = function (_React$Component) {
+    _inherits(Drawer, _React$Component);
 
-    var _this3 = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+    function Drawer() {
+      _classCallCheck(this, Drawer);
 
-    _this3.state = {
-      showDrawer: false
-    };
-    return _this3;
-  }
+      return _possibleConstructorReturn(this, (Drawer.__proto__ || Object.getPrototypeOf(Drawer)).apply(this, arguments));
+    }
 
-  _createClass(App, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        _reactNative.View,
-        null,
-        React.createElement(
+    _createClass(Drawer, [{
+      key: 'render',
+      value: function render() {
+        var nav = Object.keys(this.props).map(function (key) {
+          return React.createElement(
+            _reactNative.Text,
+            null,
+            key
+          );
+        });
+        return React.createElement(
+          _reactNative.View,
+          null,
+          nav
+        );
+      }
+    }]);
+
+    return Drawer;
+  }(React.Component);
+
+  var App = exports.App = function (_React$Component2) {
+    _inherits(App, _React$Component2);
+
+    function App() {
+      _classCallCheck(this, App);
+
+      return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    _createClass(App, [{
+      key: 'render',
+      value: function render() {
+        return React.createElement(
           _reactNative.View,
           null,
           React.createElement(
             _reactNative.Text,
             null,
-            'Main page'
+            'Main Page'
           )
-        )
-      );
-    }
-  }]);
+        );
+      }
+    }]);
 
-  return App;
-}(React.Component);
+    return App;
+  }(React.Component);
 
-var Drawer = exports.Drawer = function (_React$Component) {
- _inherits(Drawer, _React$Component);
+  var AccountSummary = exports.AccountSummary = function (_React$Component3) {
+    _inherits(AccountSummary, _React$Component3);
 
- function Drawer() {
-   _classCallCheck(this, Drawer);
+    function AccountSummary(props) {
+      _classCallCheck(this, AccountSummary);
 
-   return _possibleConstructorReturn(this, (Drawer.__proto__ || Object.getPrototypeOf(Drawer)).apply(this, arguments));
- }
+      var _this3 = _possibleConstructorReturn(this, (AccountSummary.__proto__ || Object.getPrototypeOf(AccountSummary)).call(this, props));
 
- _createClass(Drawer, [{
-   key: 'render',
-   value: function render() {
-     var nav = Object.keys(this.props).map(function (key) {
-       return React.createElement(
-         _reactNative.Text,
-         null,
-         key
-       );
-     });
-     return React.createElement(
-       _reactNative.View,
-       null,
-       nav
-     );
-   }
- }]);
-
- return Drawer;
-}(React.Component);
-
-var AccountSummary = (exports.AccountSummary = (function(_React$Component) {
-  _inherits(AccountSummary, _React$Component);
-
-  function AccountSummary(props) {
-    _classCallCheck(this, AccountSummary);
-
-    var _this = _possibleConstructorReturn(
-      this,
-      (AccountSummary.__proto__ || Object.getPrototypeOf(AccountSummary)).call(
-        this,
-        props
-      )
-    );
-
-    _this.state = {
-      AccountModel: [
-        {
+      _this3.state = {
+        AccoutModel: [{
           AccountId: 1,
           AccountName: "Super Savings"
-        },
-        {
+        }, {
           AccountId: 2,
           AccountName: "Checking"
-        },
-        {
+        }, {
           AccountId: 3,
           AccountName: "Deposits"
-        }
-      ]
-    };
-    return _this;
-  }
+        }]
+      };
+      return _this3;
+    }
 
-  _createClass(AccountSummary, [
-    {
-      key: "render",
+    _createClass(AccountSummary, [{
+      key: 'render',
       value: function render() {
-        var accounts = this.state.AccountModel.map(function(account) {
+        var accounts = this.state.AccountModel.map(function (account) {
           return React.createElement(
             _reactNative.View,
             null,
             React.createElement(
               _reactNative.Text,
               null,
-              "Account Id: ",
+              'AccountId : ',
               account.AccountId
             ),
             React.createElement(
               _reactNative.Text,
               null,
-              "Account Name: ",
+              'AccountName: ',
               account.AccountName
             )
           );
         });
-        return React.createElement(_reactNative.View, null, accounts);
+        return React.createElement(
+          _reactNative.View,
+          null,
+          accounts
+        );
       }
-    }
-  ]);
+    }]);
 
-  return AccountSummary;
-})(React.Component));
+    return AccountSummary;
+  }(React.Component);
 
 var Navigator = createSwitchNavigator(
   {
@@ -142,8 +126,8 @@ var NavigatorApp = createAppContainer(Navigator);
 
   return {
     App: App,
-	AccountSummary: AccountSummary,
+	  AccountSummary: AccountSummary,
     Drawer: Drawer,
-	Navigator: NavigatorApp
+	  Navigator: NavigatorApp
   }
 })
