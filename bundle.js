@@ -35,37 +35,35 @@
   return App;
 }(React.Component);
 
- var Drawer = (exports.Drawer = (function(_React$Component) {
-  _inherits(Drawer, _React$Component);
+var Drawer = exports.Drawer = function (_React$Component) {
+ _inherits(Drawer, _React$Component);
 
-  function Drawer() {
-    _classCallCheck(this, Drawer);
+ function Drawer() {
+   _classCallCheck(this, Drawer);
 
-    return _possibleConstructorReturn(
-      this,
-      (Drawer.__proto__ || Object.getPrototypeOf(Drawer)).apply(this, arguments)
-    );
-  }
+   return _possibleConstructorReturn(this, (Drawer.__proto__ || Object.getPrototypeOf(Drawer)).apply(this, arguments));
+ }
 
-  _createClass(Drawer, [
-    {
-      key: "render",
-      value: function render() {
-        var navigation = Object.keys(_this3.props).map(function (key) {
-                              return React.createElement(
-                                _reactNative.Text,
-                                null,
-                                key
-                              );
-                            });
-        return React.createElement(_reactNative.View, null, navigation);
-      }
-    }
-  ]);
+ _createClass(Drawer, [{
+   key: 'render',
+   value: function render() {
+     var nav = Object.keys(this.props).map(function (key) {
+       return React.createElement(
+         _reactNative.Text,
+         null,
+         key
+       );
+     });
+     return React.createElement(
+       _reactNative.View,
+       null,
+       nav
+     );
+   }
+ }]);
 
-  return Drawer;
-})(React.Component));
-
+ return Drawer;
+}(React.Component);
 
 var AccountSummary = (exports.AccountSummary = (function(_React$Component) {
   _inherits(AccountSummary, _React$Component);
