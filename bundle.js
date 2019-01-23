@@ -1,4 +1,4 @@
-(function(React, _reactNative, _reactNavigation, styles, createAppContainer){
+(function(React, _reactNative, _reactNavigation, styles, createAppContainer, createDrawerNavigator){
 
   var SimpleView = exports.SimpleView = function (_React$Component) {
   _inherits(SimpleView, _React$Component);
@@ -150,7 +150,7 @@ var App = exports.App = function (_React$Component4) {
 // Drawer Navigator
 
 
-var MyDrawerNavigator = (0, _reactNavigation.createDrawerNavigator)({
+var MyDrawerNavigator = createDrawerNavigator({
   App: App,
   AccountSummary: AccountSummary,
   SimpleView: SimpleView,
@@ -160,6 +160,7 @@ var MyDrawerNavigator = (0, _reactNavigation.createDrawerNavigator)({
 });
 
 var MyApp = createAppContainer(MyDrawerNavigator);
+
   return {
     App: MyApp,
 	  AccountSummary: AccountSummary,
