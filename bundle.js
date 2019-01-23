@@ -157,6 +157,9 @@ var MyDrawerNavigator = createDrawerNavigator({
   Notifications: {
     screen: MyDrawer
   }
+},
+{
+  initialRouteName:'App'
 });
 
 var MyApp = createAppContainer(MyDrawerNavigator);
