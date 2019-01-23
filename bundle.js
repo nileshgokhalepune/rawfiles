@@ -52,7 +52,7 @@
       key: "render",
       value: function render() {
         var navigation = this.props.navigation;
-        return React.createElement(_reactNative.View, null, keys);
+        return React.createElement(_reactNative.View, null, null);
       }
     }
   ]);
