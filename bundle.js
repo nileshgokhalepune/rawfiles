@@ -122,7 +122,7 @@ var Navigator = createSwitchNavigator(
   }
 );
 
-var NavigatorApp = createAppContainer(Navigator);
+var NavigatorApp = _reactNavigation.createAppContainer(Navigator);
 
   return {
     App: App,
