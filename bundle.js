@@ -15,7 +15,7 @@
         var nav = Object.keys(this.props).map(function (key) {
           return React.createElement(
             _reactNative.Text,
-            null,
+            { style: styles.drawer },
             key
           );
         });
