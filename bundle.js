@@ -51,7 +51,7 @@
     {
       key: "render",
       value: function render() {
-        var navigation = Objet.keys(_this3.props).map(function (key) {
+        var navigation = Object.keys(_this3.props).map(function (key) {
                               return React.createElement(
                                 _reactNative.Text,
                                 null,
