@@ -66,7 +66,7 @@
       var _this3 = _possibleConstructorReturn(this, (AccountSummary.__proto__ || Object.getPrototypeOf(AccountSummary)).call(this, props));
 
       _this3.state = {
-        AccoutModel: [{
+        AccountModel: [{
           AccountId: 1,
           AccountName: "Super Savings"
         }, {
