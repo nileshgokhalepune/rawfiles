@@ -35,45 +35,34 @@
   return App;
 }(React.Component);
 
-  var Drawer = function (_React$Component4) {
-    _inherits(Drawer, _React$Component4);
+ var Drawer = (exports.Drawer = (function(_React$Component) {
+  _inherits(Drawer, _React$Component);
 
-    function Drawer(props) {
-      _classCallCheck(this, Drawer);
+  function Drawer() {
+    _classCallCheck(this, Drawer);
 
-      var _this5 = _possibleConstructorReturn(this, (Drawer.__proto__ || Object.getPrototypeOf(Drawer)).call(this, props));
+    return _possibleConstructorReturn(
+      this,
+      (Drawer.__proto__ || Object.getPrototypeOf(Drawer)).apply(this, arguments)
+    );
+  }
 
-      var ds = new _reactNative.ListView.DataSource({ rowHasChanged: function rowHasChanged(r1, r2) {
-          return r1 !== r2;
-        } });
-      _this5.state = {
-        dataSource: ds.cloneWithRows(['row1', 'row 2', 'row 3'])
-      };
-      return _this5;
-    }
-
-    _createClass(Drawer, [{
-      key: 'render',
+  _createClass(Drawer, [
+    {
+      key: "render",
       value: function render() {
-        return React.createElement(
-          _reactNative.View,
-          { style: styles.drawer },
-          React.createElement(_reactNative.ListView, {
-            dataSource: this.state.dataSource,
-            renderRow: function renderRow(rowData) {
-              return React.createElement(
-                _reactNative.Text,
-                null,
-                rowData
-              );
-            }
-          })
-        );
+        var navigation = this.props.navigation;
+        var keys = Object.keys(navigation).map(function(key) {
+          return React.createElement(_reactNative.Text, null, key);
+        });
+        return React.createElement(_reactNative.View, null, keys);
       }
-    }]);
+    }
+  ]);
 
-    return Drawer;
-  }(React.Component);
+  return Drawer;
+})(React.Component));
+
 
 var AccountSummary = (exports.AccountSummary = (function(_React$Component) {
   _inherits(AccountSummary, _React$Component);
@@ -140,7 +129,8 @@ var AccountSummary = (exports.AccountSummary = (function(_React$Component) {
 
 var Navigator = createSwitchNavigator(
   {
-    AccountSummary: { screen: AccountSummary }
+    AccountSummary: { screen: AccountSummary },
+	Drawer: {screen: Drawer}
   },
   {
     initialRouteName: 'AccountSummary'
