@@ -1,4 +1,4 @@
-(function main(React, _reactNative, _nativebase, componentState,createAppContainer, createDrawerNavigator) {
+(function main(React, _reactNative, _nativebase, reactNavigation, componentState,createAppContainer, createDrawerNavigator) {
     'use strict';
 
     var root = this;
@@ -304,9 +304,7 @@
     }(React.Component);
 
     var MyDrawerNavigator = createDrawerNavigator({
-      Login: Login,
-      AccountSummary: AccountSummary,
-      ChangeUserId: ChangeUserId,
+      Login: NewComponent
     },
     {
       initialRouteName:'Login'
