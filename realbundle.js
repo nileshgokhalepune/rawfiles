@@ -160,7 +160,9 @@
 				_this2.toggleSearch = function () {
 					var searchButtonId = _this2.props.config.searchButtonId;
 
-					if (_this2.state.accountSummaryModel.searchVisible) {
+					if (
+						_this2.state.accountSummaryModel &&
+						_this2.state.accountSummaryModel.searchVisible) {
 						_this2.resetSearch();
 					}
 				};
@@ -172,26 +174,33 @@
 							accountSelected: true
 						};
 					});
-					var searchButtonId = _this2.props.config.searchButtonId;
+					var searchButtonId = _this2.props.config
+						 ? _this2.props.config.searchButtonId
+						 : "";
 					_this2.resetSearch();
 				};
 
 				_this2.handleModelChange = function ($spec) {};
 
-				_this2.state = {
-					accountSummaryModel: _this2.createAccountSummaryModel(
-						_this2.props.config.accounts,
-						[],
-						_this2.props.config.accountTypes),
-					accountSelected: false
-				};
+				if (_this2.props.config) {
+					_this2.state = {
+						accountSummaryModel: _this2.createAccountSummaryModel(
+							_this2.props.config.accounts,
+							[],
+							_this2.props.config.accountTypes),
+						accountSelected: false
+					};
+				} else {
+					_this2.state = {};
+				}
 				return _this2;
 			}
 
 			_createClass(AccountSummaryModule, [{
 						key: "componentDidUpdate",
 						value: function componentDidUpdate() {
-							var module = "#" + this.props.config.moduleId;
+							var module =
+								"#" + this.props.config ? this.props.config.moduleId : "nomoduleid";
 						}
 					}, {
 						key: "componentDidMount",
