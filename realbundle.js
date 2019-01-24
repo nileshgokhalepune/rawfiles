@@ -395,8 +395,7 @@ responsiveHeight, responsiveFontSize) {
 
     var ChangeUserId = function (_React$Component) {
             _inherits(ChangeUserId, _React$Component);
-            //console.log(React.Component)
-            function NewComponent(props) {
+            function ChangeUserId(props) {
                 _classCallCheck(this, ChangeUserId);
 
                 var _this = _possibleConstructorReturn(this, (ChangeUserId.__proto__ || Object.getPrototypeOf(ChangeUserId)).call(this, props));
