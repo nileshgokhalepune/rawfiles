@@ -1,4 +1,5 @@
-(function main(React, _reactNative, _nativebase, reactNavigation, componentState,createAppContainer, createDrawerNavigator) {
+(function main(React, _reactNative, _nativebase, reactNavigation, componentState,createAppContainer, createDrawerNavigator,
+responsiveHeight, responsiveFontSize) {
     'use strict';
 
     var root = this;
@@ -78,7 +79,55 @@
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-around'
-        }
+        },    bottomLayer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: responsiveHeight(2),
+        marginRight: responsiveHeight(2),
+    },
+    container: {
+        flex: 1,
+    },
+    padding: {
+        padding: responsiveHeight(2),
+    },
+    scrollView: {
+        flex: 1,
+        backgroundColor: "white",
+        padding: responsiveHeight(2)
+    },
+    headerContainter: {
+        flexDirection: "row",
+        paddingTop: responsiveHeight(2),
+        paddingBottom: responsiveHeight(2),
+        // alignContent:"center",
+        backgroundColor: "blue",
+        justifyContent: 'space-around',
+        alignItems: "center"
+    },
+    accountSummaryContainer: {
+        paddingBottom: responsiveHeight(2),
+        paddingLeft: responsiveHeight(1.5)
+    },
+    accountSummaryText: {
+        fontSize: responsiveFontSize(titleSize),
+        textAlign: "justify"
+    },
+    customStyle: {
+        backgroundColor: "green"
+    },
+    headerBorder: {
+        alignItems: "center",
+        flexDirection: "row",
+        paddingTop: responsiveHeight(0.3)
+    },
+    mainContainer: {
+        justifyContent: "flex-start", backgroundColor: "white", padding: responsiveHeight(1)
+    },
+    grayLine: {
+        marginLeft: responsiveHeight(1), marginRight: responsiveHeight(1)
+    }
     });
 
 
@@ -334,8 +383,193 @@
         return NewComponent;
     }(React.Component);
 
+
+    function showLoading(localState) {
+    }
+
+    function hideLoading(localState) {
+    }
+
+    function changeUserIdPost(localState){
+    }
+
+    var ChangeUserId = function (_React$Component) {
+            _inherits(ChangeUserId, _React$Component);
+            //console.log(_react2.Component)
+            function NewComponent(props) {
+                _classCallCheck(this, ChangeUserId);
+
+                var _this = _possibleConstructorReturn(this, (ChangeUserId.__proto__ || Object.getPrototypeOf(ChangeUserId)).call(this, props));
+
+                _this.state = {
+                    newUserId : "",
+                    existingUserId : "",
+                    confirmUserId: "",
+                    isLoading : false
+                }
+                return _this;
+            }
+
+            _createClass(ChangeUserId, [{
+                key: 'componentDidMount',
+                value: function componentDidMount() {
+
+                    var local = this;
+                    componentState.localStorage.getData("Apis").then(function(result) {
+                        var jsonData = JSON.parse(result);
+                        if(jsonData && jsonData.sessionKey && jsonData.sessionKey.username){
+                            local.setState({ existingUserId : jsonData.sessionKey.username});
+                        }
+                    })
+
+                }
+            }, {
+                key: 'render',
+                value: function render() {
+                    var _this = this;
+                    var localObject = this;
+
+                    var i = 1;
+                    var isAndroid = Platform.OS == "android" ? true : false
+
+                    return _react2.createElement(_reactNative.View, { style: styles.container },
+                        [
+                            _react2.createElement(_reactNative.View, { key: ++i, style: styles.mainContainer },
+                                [
+                                    _react2.createElement(_reactNative.View, { key: ++i, style: styles.accountSummaryContainer },
+                                        [
+                                            _react2.createElement(_reactNative.Text, { key: ++i, style: styles.accountSummaryText }, ["Change User ID"])
+                                        ]
+                                    )
+                                ]),
+                            _react2.createElement(_reactNative.ScrollView, { key: ++i, style: styles.scrollView },
+                                [
+                                    // inside the ScrollView
+                                    _react2.createElement(_reactNative.View, { key: ++i, style: { height: 500 } }, [
+
+                                        _react2.createElement(_reactNative.View, { key: ++i, style: { flex: 1 } }, [
+                                            _react2.createElement(_reactNative.View, { key: ++i }, [
+                                                _react2.createElement(_reactNative.Text, { key: ++i }, [
+                                                    "Your user Id must be between 8 and 26 characters in length and may be made up of both letters and numerals. Your user ID is not case sensitive."
+                                                ])
+                                            ]),
+
+                                            //
+                                            _react2.createElement(_reactNative.View, { key: ++i }, [
+                                                _react2.createElement(_reactNative.View, {
+                                                    key: ++i, style: {
+                                                        marginTop: responsiveHeight(2),
+                                                        backgroundColor: "#FAFAFA", borderRadius: 1, padding: responsiveHeight(2.2)
+                                                    }
+                                                },
+                                                    [
+                                                        _react2.createElement(_reactNative.View, { key: ++i, style: { marginTop: responsiveHeight(1), marginBottom: 0 } }, [
+                                                            //
+                                                            _react2.createElement(_reactNative.View, { key: ++i }, [
+                                                                _react2.createElement(_reactNative.Text, { key: ++i, style: { color: "gray" } }, [
+                                                                    "Existing User ID"
+                                                                ])
+                                                            ]),
+                                                            _react2.createElement(_reactNative.View, { key: ++i }, [
+                                                                //
+                                                                _react2.createElement(_reactNative.Text, { key: ++i }, [
+                                                                    _this.state.existingUserId
+                                                                ])
+                                                            ])
+                                                        ]),
+
+                                                        _react2.createElement(_reactNative.View, { key: ++i, style: { marginTop: responsiveHeight(3) } }, [
+                                                            //
+                                                            _react2.createElement(_reactNative.View, { key: ++i }, [
+                                                                _react2.createElement(_reactNative.Text, { key: ++i, style: { color: "gray" } }, [
+                                                                    "New User ID"
+                                                                ])
+                                                            ]),
+                                                            _react2.createElement(_reactNative.View, { key: ++i, style: { marginTop: responsiveHeight(1) } }, [
+                                                                //
+                                                                _react2.createElement(_reactNative.TextInput, {
+                                                                    key: ++i, style: { borderWidth: 0.9, padding: 0, backgroundColor: "white", borderColor: "gray" },
+                                                                    onChangeText: function (val) {
+                                                                        _this.setState({ newUserId: val })
+                                                                    },
+                                                                }, [
+                                                                    _this.state.newUserId
+                                                                    ])
+                                                            ])
+                                                        ])
+                                                        ,
+                                                        _react2.createElement(_reactNative.View, { key: ++i, style: { marginTop: responsiveHeight(3) } }, [
+                                                            //
+                                                            _react2.createElement(_reactNative.View, { key: ++i }, [
+                                                                _react2.createElement(_reactNative.Text, { key: ++i, style: { color: "gray" } }, [
+                                                                    "Confirm  User ID"
+                                                                ])
+                                                            ]),
+                                                            _react2.createElement(_reactNative.View, { key: ++i, style: { marginTop: responsiveHeight(1) } }, [
+                                                                //
+                                                                _react2.createElement(_reactNative.TextInput, {
+                                                                    key: ++i, style: { borderWidth: 0.9, padding: 0, backgroundColor: "white", borderColor: "gray" }
+                                                                    ,onChangeText: function (val) {
+                                                                        _this.setState({ confirmUserId: val })
+                                                                    },
+                                                                },
+                                                                    [
+                                                                        _this.state.confirmUserId
+                                                                    ])
+                                                            ])
+                                                        ])
+
+                                                    ]),
+                                                _react2.createElement(_reactNative.View, { key: ++i, style: { marginTop: responsiveHeight(4) } }, [
+
+                                                    _react2.createElement(_reactNative.View, { key: ++i, style: { marginTop: responsiveHeight(2) } }, [
+                                                        //
+                                                        _react2.createElement(_reactNative.View, { key: ++i }, [
+                                                            _react2.createElement(_reactNative.Button, {
+                                                                key: ++i, style: { fontSize: responsiveFontSize(2), fontWeight: "normal", padding: responsiveHeight(0.5), color: "white", borderWidth: responsiveHeight(0.1), borderColor: "#015EBF", backgroundColor: "#0061b8" },
+                                                                onPress:  function () {
+                                                                      changeUserIdPost(localObject);
+                                                                               //  alert(_this.state.confirmUserId)
+                                                                }
+                                                            }, [
+                                                                    "Save Changes",
+
+                                                                ])
+                                                        ])
+                                                    ]),
+                                                    _react2.createElement(_reactNative.View, { key: ++i, style: { marginTop: responsiveHeight(1.9) } }, [
+                                                        //
+                                                        _react2.createElement(_reactNative.View, { key: ++i }, [
+                                                            _react2.createElement(_reactNative.Button, {
+                                                                key: ++i, style: { fontSize: responsiveFontSize(2), fontWeight: "normal", padding: responsiveHeight(0.5), borderWidth: responsiveHeight(0.1), borderColor: "#0061b8", backgroundColor: "white" },
+                                                                onPress:  function () {
+                                                                    alert(_this.state.confirmUserId)
+                                                                }
+                                                            }, [
+                                                                    "Cancel"
+                                                                ])
+                                                        ])
+                                                    ])
+                                                ])
+                                            ])
+                                        ])
+                                    ]),
+                                ])
+                            ]
+                    )
+
+                }
+            }]);
+
+            return ChangeUserId;
+        }(_react2.Component);
+
+
+
+
     var MyDrawerNavigator = createDrawerNavigator({
-      Login: NewComponent
+      Login: NewComponent,
+      ChangeUserId: ChangeUserId
     },
     {
       initialRouteName:'Login'
