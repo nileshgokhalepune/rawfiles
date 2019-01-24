@@ -215,6 +215,14 @@
 
 							return accountSummary;
 						}
+					}, {
+						key: "render",
+						value: function render() {
+							return React.createElement(
+								_reactNative.View,
+								null,
+								React.createElement(_reactNative.Text, null, "Inside Account Summary"));
+						}
 					}
 				]);
 
