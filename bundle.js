@@ -32,7 +32,7 @@ var AccountSummary = exports.AccountSummary = function (_React$Component2) {
     var _this2 = _possibleConstructorReturn(this, (AccountSummary.__proto__ || Object.getPrototypeOf(AccountSummary)).call(this, props));
 
     _this2.goBack = function () {
-      _this2.props.navigate('DrawerOpen');
+      _this2.props.navigation.navigate('DrawerOpen');
           _this2.props.navigation.navigate('App');
         };
 
