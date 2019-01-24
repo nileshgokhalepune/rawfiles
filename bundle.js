@@ -51,30 +51,30 @@ var AccountSummary = exports.AccountSummary = function (_React$Component2) {
     value: function render() {
       var accounts = this.state.AccountModel.map(function (account) {
         return React.createElement(
-         _reactNative.View,
-         null,
-         React.createElement(Button, { title: 'Go to Change Login', onPress: _this4.goBack }),
-         React.createElement(
-           _reactNative.View,
-           { style: styles.account, key: account.AccountId },
-           React.createElement(
-             _reactNative.Text,
-             null,
-             'AccountId : ',
-             account.AccountId
-           ),
-           React.createElement(
-             _reactNative.Text,
-             null,
-             'AccountName: ',
-             account.AccountName
-           )
-         )
-       );
+          _reactNative.View,
+          null,
+          React.createElement(
+            _reactNative.View,
+            { style: styles.account, key: account.AccountId },
+            React.createElement(
+              _reactNative.Text,
+              null,
+              'AccountId : ',
+              account.AccountId
+            ),
+            React.createElement(
+              _reactNative.Text,
+              null,
+              'AccountName: ',
+              account.AccountName
+            )
+          )
+        );
       });
       return React.createElement(
         _reactNative.View,
         null,
+        React.createElement(Button, { title: 'Go to Change Login', onPress: this.goBack }),
         accounts
       );
     }
