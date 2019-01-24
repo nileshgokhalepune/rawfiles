@@ -134,7 +134,7 @@ var App = exports.App = function (_React$Component4) {
     value: function render() {
       return React.createElement(
         _reactNative.View,
-        null,
+        {style : { backgroundColor: 'red' }},
         React.createElement(
           _reactNative.Text,
           null,
