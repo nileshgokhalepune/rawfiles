@@ -131,13 +131,21 @@ MyDrawer.navigationOptions = {
   }
 };
 
-var App = exports.App = function (_React$Component4) {
-  _inherits(App, _React$Component4);
+var App = exports.App = function (_React$Component2) {
+  _inherits(App, _React$Component2);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this2 = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this2.openDrawer = function () {
+      if (_this2.props.navigation && _this2.props.navigation.navigate) {
+        _this2.props.navigation.navigate('DrawerOpen');
+      }
+    };
+
+    return _this2;
   }
 
   _createClass(App, [{
@@ -145,7 +153,8 @@ var App = exports.App = function (_React$Component4) {
     value: function render() {
       return React.createElement(
         _reactNative.View,
-        {style : { backgroundColor: 'red' }},
+        { style: { backgroundColor: 'grey' } },
+        React.createElement(Button, { onPress: this.openDrawer }),
         React.createElement(
           _reactNative.Text,
           null,
@@ -157,6 +166,7 @@ var App = exports.App = function (_React$Component4) {
 
   return App;
 }(React.Component);
+
 
 // Drawer Navigator
 
