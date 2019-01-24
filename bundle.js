@@ -80,7 +80,7 @@ var AccountSummary = exports.AccountSummary = function (_React$Component2) {
       return React.createElement(
         _reactNative.View,
         null,
-        React.createElement(_reactNative.Button, { title: 'Go to Change Login', onPress: this.goBack }),
+        React.createElement(_reactNative.Button, { title: 'Go to Main', onPress: this.goBack }),
         accounts
       );
     }
