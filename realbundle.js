@@ -91,7 +91,38 @@
         localState.setState({ isLoading: false });
     }
 
-    function loginCall(localState) {
+    function loginCall() {
+      var userJsonData = { "loginName": componentState.state.userName, "password": componentState.state.password };
+
+      fetch('http://cfsfiserv.com/QEUATSMT/api/Authentication/Login', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userJsonData)
+      }).then(function (response) {
+         componentState.setState({progressModal:false});
+          var responseObj = JSON.parse(response._bodyText);
+          var TokenResponse = responseObj.antiForgeryToken;
+          //console.log("responseObj  =::" + responseObj.antiForgeryToken);
+          if (TokenResponse == '' || TokenResponse == undefined) {
+  	_nativebase.Toast.show({
+              text: 'Please enter the valid UserName and Password',
+              position: 'bottom',
+              buttonText: 'Okay',
+              duration: 5000,
+              type: 'danger'
+          });
+
+          } else {
+              this.props.navigation.navigate("AccountSummary", {
+                  token: TokenResponse
+              });
+          }
+      });
+  }
+
+    function loginCall1(localState) {
         var userJsonData = {"loginName": localState.state.userName, "password": localState.state.password};
         //console.warn("In Login")
         //console.warn(userJsonData);
