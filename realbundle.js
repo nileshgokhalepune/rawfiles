@@ -231,7 +231,7 @@
 
 	var MyDrawerNavigator = (0, _reactNavigation.createDrawerNavigator)({
 		Login: LoginModule,
-		AccountSummaryModule: AccountSummaryModule
+		AccountSummary: AccountSummaryModule
 	}, {
 		initialRouteName: "Login"
 	});
