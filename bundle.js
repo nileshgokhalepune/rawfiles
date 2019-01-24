@@ -159,7 +159,7 @@ var MyDrawerNavigator = createDrawerNavigator({
   }
 },
 {
-  initialRouteName:'App'
+  initialRouteName:'AccountSummary'
 });
 
 var MyApp = createAppContainer(MyDrawerNavigator);
