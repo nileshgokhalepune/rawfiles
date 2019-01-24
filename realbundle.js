@@ -1,4 +1,4 @@
-(function main(React, _reactNative, _nativebase, reactNavigation, styles, createAppContainer, createDrawerNavigator) {
+(function main(React, _reactNative, _nativebase, reactNavigation, styles, createAppContainer, createDrawerNavigator, apiBase) {
 	'use strict';
 
 	var LoginModule = (exports.LoginModule = (function (_React$Component) {
@@ -19,7 +19,7 @@
 						password: _this.state.password
 					};
 					console.log("Fetching....");
-					fetch("http://cfsfiserv.com/QEUATSMT/api/Authentication/Login", {
+					fetch(apiBase + "/api/Authentication/Login", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json"
@@ -190,8 +190,6 @@
 							_this2.props.config.accountTypes),
 						accountSelected: false
 					};
-				} else {
-					_this2.state = {};
 				}
 				return _this2;
 			}
@@ -199,6 +197,14 @@
 			_createClass(AccountSummaryModule, [{
 						key: "componentDidUpdate",
 						value: function componentDidUpdate() {
+							var _this3 = this;
+
+							fetch(apiBase + "/api", {}).then(function (response) {
+								_this3.setState({
+									apis: response.json()
+								});
+							});
+
 							var module =
 								"#" + this.props.config ? this.props.config.moduleId : "nomoduleid";
 						}
@@ -227,10 +233,17 @@
 					}, {
 						key: "render",
 						value: function render() {
+							var apis = this.state.apis.map(function (api) {
+									return React.createElement(_reactNative.Text, null, "api");
+								});
 							return React.createElement(
 								_reactNative.View,
 								null,
-								React.createElement(_reactNative.Text, null, "Inside Account Summary"));
+								React.createElement(
+									_reactNative.Text,
+									null,
+									"Inside Account Summary"),
+								apis);
 						}
 					}
 				]);
