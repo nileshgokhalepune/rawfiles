@@ -1,4 +1,4 @@
-(function main(React, _reactNative, _nativebase, reactNavigation, componentState, createAppContainer, createDrawerNavigator, responsiveHeight, responsiveFontSize) {
+(function main(React, _reactNative, _nativebase, reactNavigation, styles, createAppContainer, createDrawerNavigator) {
 	'use strict';
 
 	var LoginModule = (exports.LoginModule = (function (_React$Component) {
