@@ -335,7 +335,7 @@ responsiveHeight, responsiveFontSize) {
                                         autoCapitalize: 'none',
                                         "bindingMode": "",
                                         onChangeText: function (val) {
-                                            _this.setState({ userName: val });
+                                            componentState.setState({ userName: val });
                                         },
                                         placeHolder: "Enter the User Name"
                                     }, [])
@@ -357,7 +357,7 @@ responsiveHeight, responsiveFontSize) {
                                         style: styles.inputStyle,
                                         "bindingMode": "",
                                         onChangeText: function (val) {
-                                            _this.setState({ password: val })
+                                            componentState.setState({ password: val })
                                         },
                                         autoCapitalize: 'none',
                                         secureTextEntry: true,
