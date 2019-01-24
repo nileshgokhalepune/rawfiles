@@ -154,7 +154,7 @@ var App = exports.App = function (_React$Component2) {
       return React.createElement(
         _reactNative.View,
         { style: { backgroundColor: 'grey' } },
-        React.createElement(Button, { onPress: this.openDrawer }),
+        React.createElement(_reactNative.Button, { onPress: this.openDrawer }),
         React.createElement(
           _reactNative.Text,
           null,
