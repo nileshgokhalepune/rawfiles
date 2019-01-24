@@ -42,7 +42,7 @@
 							});
 						} else {
 							console.log(TokenResponse);
-							this.props.navigation.navigate("AccountSummary", {
+							_this.props.navigation.navigate("AccountSummary", {
 								token: TokenResponse
 							});
 						}
