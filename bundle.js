@@ -52,7 +52,7 @@ var AccountSummary = exports.AccountSummary = function (_React$Component2) {
       var accounts = this.state.AccountModel.map(function (account) {
         return React.createElement(
           _reactNative.View,
-          { key: account.AccountId },
+          { style: styles.account, key: account.AccountId },
           React.createElement(
             _reactNative.Text,
             null,
