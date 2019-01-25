@@ -111,7 +111,8 @@
 											placeholder: "Enter the Username",
 											onChangeText: function onChangeText(val) {
 												//this.setState({ userName: val });
-											}
+											},
+											value: this.state.userName
 										})),
 									React.createElement(
 										_reactNative.View, {
@@ -123,7 +124,8 @@
 											placeholder: "Enter the password",
 											onChangeText: function onChangeText(val) {
 												//this.setState({ password: val });
-											}
+											},
+											value: this.state.password
 										}))),
 								React.createElement(
 									_reactNative.View,
