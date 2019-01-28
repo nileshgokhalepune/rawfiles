@@ -235,9 +235,9 @@
 					}, {
 						key: "render",
 						value: function render() {
-							var apis = this.state.apis.map(function (api) {
+							var apis = this.state && this.state.apis ? this.state.apis.map(function (api) {
 									return React.createElement(_reactNative.Text, null, "api");
-								});
+								}) : null;
 							return React.createElement(
 								_reactNative.View,
 								null,
