@@ -59,7 +59,7 @@
 						console.log(response);
 						var responseObj = JSON.parse(response._bodyText);
 						var TokenResponse = responseObj.antiForgeryToken;
-
+						_this.storeData(responseObj.antiForgeryToken);
 						if (TokenResponse == "" || TokenResponse == undefined) {
 							console.log("Invalid response");
 							_nativeBase.Toast.show({
