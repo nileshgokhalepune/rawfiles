@@ -154,7 +154,7 @@
 						(
 							AccountSummaryModule.__proto__ ||
 							Object.getPrototypeOf(AccountSummaryModule)).call(this, props));
-
+        _this2.state = {};
 				_this2.shouldRenderModule = false;
 
 				_this2.resetSearch = function () {};
