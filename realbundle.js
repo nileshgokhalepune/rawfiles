@@ -208,11 +208,13 @@
               debugger;
   							var _this3 = this;
 
-  							fetch(apiBase + "/api", {}).then(function (response) {
-  								_this3.setState({
-  									apis: response.json()
-  								});
-  							});
+                fetch('/api').then(function (response) {
+                  return response.json();
+                }).then(function (data) {
+                  _this3.setState({
+                    apis: data
+                  });
+                });
 
             }
 					}, {
