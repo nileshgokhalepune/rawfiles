@@ -76,8 +76,7 @@
 					}
 				};
 
-				_this.state = {
-				};
+				_this.state = {};
 				return _this;
 			}
 
@@ -109,7 +108,9 @@
 											style: styles.inputStyle,
 											placeholder: "Enter the Username",
 											onChangeText: function onChangeText(val) {
-												_this2.setState({ userName: val });
+												_this2.setState({
+													userName: val
+												});
 											},
 											value: this.state.userName
 										})),
@@ -122,7 +123,9 @@
 											style: styles.inputStyle,
 											placeholder: "Enter the password",
 											onChangeText: function onChangeText(val) {
-												_this2.setState({ password: val });
+												_this2.setState({
+													password: val
+												});
 											},
 											value: this.state.password
 										}))),
@@ -153,7 +156,7 @@
 						(
 							AccountSummaryModule.__proto__ ||
 							Object.getPrototypeOf(AccountSummaryModule)).call(this, props));
-        _this2.state = {};
+				_this2.state = {};
 				_this2.shouldRenderModule = false;
 
 				_this2.resetSearch = function () {};
@@ -204,20 +207,31 @@
 					}, {
 						key: "componentDidMount",
 						value: function componentDidMount() {
-              debugger;
-  							var _this3 = this;
+							var _this4 = this;
 
-                fetch('/api').then(function (response) {
-                  return response.json();
-                }).then(function (data) {
-                  _this3.setState({
-                    apis: data
-                  });
-                }).catch(function (ex) {
-                  console.log(ex);
-                });
+							fetch(apiBase + "/api/", {})
+							.then(function (response) {
+								return response.json();
+							})
+							.then(function (data) {
+								var headers = {
+									"X-CSRF-TOKEN": "",
+									"X-Request-Token": data.getAccountsAt.token
+								};
+								fetch(data.getAccountsAt.url, {
+									method: data.getAccountsAt.method
+								})
+								.then(function (accRes) {
+									return accRes.json();
+								})
+								.then(function (data) {
+									_this4.setState({
+										Accounts: data
+									});
+								});
+							});
 
-            }
+						}
 					}, {
 						key: "createAccountSummaryModel",
 						value: function createAccountSummaryModel(
