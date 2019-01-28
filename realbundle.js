@@ -199,20 +199,22 @@
 			_createClass(AccountSummaryModule, [{
 						key: "componentDidUpdate",
 						value: function componentDidUpdate() {
-							var _this3 = this;
-
-							fetch(apiBase + "/api", {}).then(function (response) {
-								_this3.setState({
-									apis: response.json()
-								});
-							});
-
 							var module =
 								"#" + this.props.config ? this.props.config.moduleId : "nomoduleid";
 						}
 					}, {
 						key: "componentDidMount",
-						value: function componentDidMount() {}
+						value: function componentDidMount() {
+              debugger;
+  							var _this3 = this;
+
+  							fetch(apiBase + "/api", {}).then(function (response) {
+  								_this3.setState({
+  									apis: response.json()
+  								});
+  							});
+
+            }
 					}, {
 						key: "createAccountSummaryModel",
 						value: function createAccountSummaryModel(
