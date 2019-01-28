@@ -214,6 +214,8 @@
                   _this3.setState({
                     apis: data
                   });
+                }).catch(function (ex) {
+                  console.log(ex);
                 });
 
             }
