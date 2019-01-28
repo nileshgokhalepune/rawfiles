@@ -77,8 +77,8 @@
 				};
 
 				_this.state = {
-					userName: "uatbususr01",
-					password: "Fsv#2016"
+					userName: "testuser",
+					password: "Asdf1234@"
 				};
 				return _this;
 			}
