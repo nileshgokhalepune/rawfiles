@@ -84,6 +84,7 @@
 			_createClass(LoginModule, [{
 						key: "render",
 						value: function render() {
+							var _this2 = this;
 							return React.createElement(
 								_nativeBase.Container, {
 								style: styles.containerStyle
@@ -108,7 +109,7 @@
 											style: styles.inputStyle,
 											placeholder: "Enter the Username",
 											onChangeText: function onChangeText(val) {
-												this.setState({ userName: val });
+												_this2.setState({ userName: val });
 											},
 											value: this.state.userName
 										})),
@@ -121,7 +122,7 @@
 											style: styles.inputStyle,
 											placeholder: "Enter the password",
 											onChangeText: function onChangeText(val) {
-												this.setState({ password: val });
+												_this2.setState({ password: val });
 											},
 											value: this.state.password
 										}))),
