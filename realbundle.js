@@ -329,7 +329,7 @@
 								})
 								.then(function (data) {
 									_this4.setState({
-										data
+										Accounts: data.Accounts
 									});
 								});
 							});
