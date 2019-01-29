@@ -358,7 +358,7 @@
 							var accounts = this.state && this.state.Accounts ? this.state.Accounts.map(function (account) {
 				        return React.createElement(
 				          _reactNative.View,
-				          { key: account.AccountId },
+				          { key: account.AccountId, style: styles.account },
 				          React.createElement(
 				            _reactNative.Text,
 				            null,
