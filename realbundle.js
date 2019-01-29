@@ -360,7 +360,7 @@
 							var accounts = this.state && this.state.Accounts ? this.state.Accounts.map(function (account) {
 				        return React.createElement(
 				          _reactNative.View,
-				          null,
+				          { key: account.AccountId },
 				          React.createElement(
 				            _reactNative.Text,
 				            null,
