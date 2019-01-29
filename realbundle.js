@@ -304,8 +304,6 @@
 			_createClass(AccountSummaryModule, [{
 						key: "componentDidUpdate",
 						value: function componentDidUpdate() {
-							var module =
-								"#" + this.props.config ? this.props.config.moduleId : "nomoduleid";
 						}
 					}, {
 						key: "componentDidMount",
