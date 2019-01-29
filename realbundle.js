@@ -357,18 +357,29 @@
 					}, {
 						key: "render",
 						value: function render() {
-							var apis = this.state && this.state.apis ? this.state.apis.map(function (api) {
-									return React.createElement(_reactNative.Text, null, "api");
-								}) : null;
-							return React.createElement(
-								_reactNative.View,
-								null,
-								React.createElement(
-									_reactNative.Text,
-									null,
-									"Inside Account Summary"),
-								apis);
-						}
+							var accounts = this.state && this.state.Accounts ? this.state.Accounts.map(function (account) {
+				        return React.createElement(
+				          _reactNative.View,
+				          null,
+				          React.createElement(
+				            _reactNative.Text,
+				            null,
+				            'AccountId: ',
+				            account.AccountId
+				          ),
+				          React.createElement(
+				            _reactNative.Text,
+				            null,
+				            'AccountName: ',
+				            account.AccountName
+				          )
+				        );
+				      }) : null;
+				      return React.createElement(
+				        _reactNative.View,
+				        null,
+				        accounts
+				      );						}
 					}
 				]);
 
