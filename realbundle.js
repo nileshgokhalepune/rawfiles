@@ -321,7 +321,7 @@
 									"X-CSRF-TOKEN":  _this4.getToken(),
 									"X-Request-Token": data.getAccountsAt.token
 								};
-								fetch(data.getAccountsAt.url, {
+								fetch(apiBase + data.getAccountsAt.url, {
 									method: data.getAccountsAt.method
 								})
 								.then(function (accRes) {
